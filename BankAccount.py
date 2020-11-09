@@ -28,15 +28,18 @@ class BankAccount:
         self._balance = self._balance +interest
         return 
     def print_receipt(self):
-        account = 0
+        account = self._account_number
+        account = account % 10000
+
+
         print(f'{self._name}')
-        print(f' Account No.: {account}')
+        print(f'Account No.: ****{account}')
         print(f'Routing No.: {self._routing_number}')
         print(f'Balance: ${"{:.2f}".format(self._balance)}')
         return 
 
 
-jj = BankAccount('JJ',100000000,123456789, 200)
+jj = BankAccount('JJ',13032340,123456789, 200)
 jj.deposit(200)
 jj.withdraw(500)
 jj.withdraw(100)
@@ -44,3 +47,18 @@ jj.get_balance()
 jj.add_interest()
 jj.get_balance()
 jj.print_receipt()
+
+aa = BankAccount( 'Aa', 10232343, 123456789, 1000)
+aa.deposit(300)
+aa.withdraw(1300)
+aa.get_balance()
+aa.add_interest()
+aa.print_receipt()
+
+dd = BankAccount('DD', 10478372, 123456789, 0)
+aa.deposit(500)
+aa.withdraw(1000)
+aa.withdraw(100)
+aa.get_balance()
+aa.add_interest()
+aa.print_receipt()
