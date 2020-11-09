@@ -11,8 +11,12 @@ class BankAccount:
         self._balance = amount + self._balance
         return print(f'Amount Deposited: ${amount}')
 
-    def withdraw(amount):
-        pass
+    def withdraw(self, amount):
+        if amount > self._balance:
+            print('Insufficient funds')
+        else:
+            self._balance = self._balance - amount
+            return print(f'Amount Withdrawn: ${amount}')
 
     def get_balance():
         pass
@@ -26,3 +30,5 @@ class BankAccount:
 
 jj = BankAccount('JJ',100000000,123456789, 200)
 jj.deposit(200)
+jj.withdraw(500)
+jj.withdraw(100)
